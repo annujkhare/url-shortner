@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>URL Shortener</title>
+
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+<div class="container">
+
+    <header>
+        <h1>URL Shortener</h1>
+        <p>Shorten your long URLs and track their visits.</p>
+    </header>
+
+    <section class="card">
+
+        <h2>Create Short URL</h2>
+
+        <div class="form">
+            <input
+                type="url"
+                id="urlInput"
+                placeholder="https://example.com/very-long-url"
+                required
+            >
+
+            <button onclick="shortenUrl()">
+                Shorten URL
+            </button>
+        </div>
+
+        <p id="message"></p>
+
+        <div id="result" class="result hidden">
+
+            <div>
+                <span>Short URL</span>
+                <a id="shortUrl" href="#" target="_blank"></a>
+            </div>
+
+            <button onclick="copyUrl()">
+                Copy
+            </button>
+
+        </div>
+
+    </section>
+
+
+    <section class="card">
+
+        <h2>URL Analytics</h2>
+
+        <div class="analytics-form">
+
+            <input
+                type="text"
+                id="analyticsInput"
+                placeholder="Enter short code"
+            >
+
+            <button onclick="getAnalytics()">
+                View Analytics
+            </button>
+
+        </div>
+
+        <div id="analytics" class="analytics hidden">
+
+            <div class="stat">
+                <span>Original URL</span>
+                <p id="originalUrl"></p>
+            </div>
+
+            <div class="stat">
+                <span>Short Code</span>
+                <p id="shortCode"></p>
+            </div>
+
+            <div class="stat">
+                <span>Total Clicks</span>
+                <p id="clicks"></p>
+            </div>
+
+            <div class="stat">
+                <span>Created At</span>
+                <p id="createdAt"></p>
+            </div>
+
+        </div>
+
+    </section>
+
+</div>
+
+<script src="script.js"></script>
+
+</body>
+</html>
